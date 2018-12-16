@@ -1,4 +1,4 @@
-from collections.abc import Iterable, Iterator
+from collections.abc import Iterable
 
 
 class Reporter(Iterable):
@@ -16,4 +16,6 @@ class Reporter(Iterable):
     def __next__(self):
         if not self.__key:
             raise StopIteration
-        return {self.__key_name: next(self.__key)}
+        result = dict()
+        result[self.__key_name] = next(self.__key)
+        return result
