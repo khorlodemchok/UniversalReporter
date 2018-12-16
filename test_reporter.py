@@ -15,6 +15,11 @@ def test_no_iterable():
 
 def test_iter():
     items = ["spam", "eggs", "sausage"]
+    expacted = [
+        {"zupa": "spam"},
+        {"zupa": "eggs"},
+        {"zupa": "sausage"}
+    ]
     r = Reporter()
     r.set_key(items, "zupa")
-    assert list(r) == items
+    assert list(r) == expacted

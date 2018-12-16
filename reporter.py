@@ -16,4 +16,4 @@ class Reporter(Iterable):
     def __next__(self):
         if not self.__key:
             raise StopIteration
-        return next(self.__key)
+        return {self.__key_name: next(self.__key)}
