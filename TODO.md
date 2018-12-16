@@ -1,2 +1,4 @@
 - ~~iterate over reporter~~
-- check if key type is iterable
+- ~~Check if key is iterable~~
+- key column name
+- return dictionaries

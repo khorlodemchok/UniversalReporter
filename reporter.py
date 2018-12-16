@@ -5,7 +5,7 @@ class Reporter(Iterable):
     def __init__(self):
         self.__key = None
 
-    def set_key(self, k):
+    def set_key(self, k, name):
         self.__key = iter(k)
 
     def __iter__(self):
