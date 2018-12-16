@@ -1,4 +1,6 @@
+- 1 add relation
+- return keys
 - ~~iterate over reporter~~
 - ~~Check if key is iterable~~
-- key column name
-- return dictionaries
+- ~~key column name~~
+- ~~return dictionaries~~
