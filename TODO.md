@@ -1,6 +1,2 @@
-- ~~multiple relations~~
-- ~~1 add relation~~
-- ~~iterate over reporter~~
-- ~~Check if key is iterable~~
-- ~~key column name~~
-- ~~return dictionaries~~
+- multi value relation
+- joining reports
