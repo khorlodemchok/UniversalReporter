@@ -25,6 +25,6 @@ class Reporter(Iterable):
         result = dict()
         key = next(self.__key)
         result[self.__key_name] = key
-        for f,n in zip(self.__rel, self.__rel_name):
+        for f, n in zip(self.__rel, self.__rel_name):
             result[n] = f(key)
         return result

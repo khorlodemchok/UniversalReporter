@@ -2,7 +2,6 @@ import pytest
 from reporter import Reporter
 
 
-
 def test_no_key():
     r = Reporter()
     assert list(r) == []
@@ -85,6 +84,7 @@ def test_one_relation():
     r.add_relation(f, "rel1")
     assert list(r) == expected
 
+
 def test_multiple_relations():
     keys = ["spam"]
     rel1 = {
@@ -100,6 +100,7 @@ def test_multiple_relations():
             "rel2": "spam_rel2"
         }
     ]
+
     def f_rel1(k):
         return data_func(rel1, k)
 
