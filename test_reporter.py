@@ -2,6 +2,7 @@ import pytest
 from reporter import Reporter
 
 
+
 def test_no_key():
     r = Reporter()
     assert list(r) == []
@@ -26,8 +27,13 @@ def test_iter():
 
 
 def test_empty_relation():
-    def zero(_):
-        return None
+
+    rel_data = {
+        "spam": None
+    }
+
+    def zero(key):
+        return data_func(rel_data, key)
 
     items = ["spam"]
     expected = [
@@ -44,14 +50,11 @@ def test_empty_relation():
 
 
 def test_one_relation():
-    reldata = {
+    rel_data = {
         "spam": "spam_val",
         "eggs": "eggs_val",
         "bacon": "bacon_val"
     }
-
-    def data_func(k):
-        return reldata[k]
 
     key = [
         "spam",
@@ -76,5 +79,41 @@ def test_one_relation():
 
     r = Reporter()
     r.set_key(key, "key")
-    r.add_relation(data_func, "rel1")
+
+    def f(k):
+        return data_func(rel_data, k)
+    r.add_relation(f, "rel1")
     assert list(r) == expected
+
+def test_multiple_relations():
+    keys = ["spam"]
+    rel1 = {
+        "spam": "spam_rel1"
+    }
+    rel2 = {
+        "spam": "spam_rel2"
+    }
+    expected = [
+        {
+            "key": "spam",
+            "rel1": "spam_rel1",
+            "rel2": "spam_rel2"
+        }
+    ]
+    def f_rel1(k):
+        return data_func(rel1, k)
+
+    def f_rel2(k):
+        return data_func(rel2, k)
+
+    r = Reporter()
+    r.set_key(keys, "key")
+    r.add_relation(f_rel1, "rel1")
+    r.add_relation(f_rel2, "rel2")
+
+    result = list(r)
+    assert result == expected
+
+
+def data_func(rel_data, k):
+    return rel_data[k]

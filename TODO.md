@@ -1,5 +1,5 @@
-- 1 add relation
-- return keys
+- ~~multiple relations~~
+- ~~1 add relation~~
 - ~~iterate over reporter~~
 - ~~Check if key is iterable~~
 - ~~key column name~~
