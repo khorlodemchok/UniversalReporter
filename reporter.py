@@ -12,10 +12,6 @@ class Reporter(Iterable):
         self.__key = iter(key)
         self.__key_name = name
 
-    def add_relation(self, func, name):
-        self.__rel.append(func)
-        self.__rel_name.append(name)
-
     def add_relation_multi(self, func, names):
 
         def mk_func(f, i):

@@ -1,2 +1,3 @@
-- multi value relation
+- get rid of single relation and related tests
+- ~~multi value relation~~
 - joining reports
