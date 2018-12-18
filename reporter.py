@@ -16,6 +16,13 @@ class Reporter(Iterable):
         self.__rel.append(func)
         self.__rel_name.append(name)
 
+    def add_relation_multi(self, func, names):
+        def f(k):
+            return func(k)[0]
+
+        self.__rel.append(f)
+        self.__rel_name.append(names[0])
+
     def __iter__(self):
         return self
 

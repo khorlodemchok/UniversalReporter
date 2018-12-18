@@ -115,6 +115,29 @@ def test_multiple_relations():
     result = list(r)
     assert result == expected
 
+def test_multi_rel():
+    keys = ["spam"]
+    rel_data = {
+        "spam": ["eggs"]
+    }
+
+    expected = [
+        {
+            "key": "spam",
+            "rel1": "eggs"
+        }
+    ]
+
+    def f_rel(k):
+        return data_func(rel_data, k)
+
+    r = Reporter()
+    r.set_key(keys, "key")
+    r.add_relation_multi(f_rel, ["rel1"])
+
+    result = list(r)
+    assert result == expected
+
 
 def data_func(rel_data, k):
     return rel_data[k]
