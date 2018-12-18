@@ -1,5 +1,5 @@
 import pytest
-from reporter import Reporter
+from UniversalReporter.reporter import Reporter
 
 
 def test_no_key():

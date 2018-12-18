@@ -1,3 +1,4 @@
-- get rid of single relation and related tests
+- make it available for other projects
+- ~~get rid of single relation and related tests~~
 - ~~multi value relation~~
 - joining reports
