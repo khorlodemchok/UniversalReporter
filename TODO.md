@@ -1,3 +1,4 @@
+- to github
 - make it available for other projects
 - ~~get rid of single relation and related tests~~
 - ~~multi value relation~~
