@@ -115,6 +115,7 @@ def test_multiple_relations():
     result = list(r)
     assert result == expected
 
+
 def test_multi_rel():
     keys = ["spam"]
     rel_data = {
@@ -136,6 +137,32 @@ def test_multi_rel():
     r.add_relation_multi(f_rel, ["rel1"])
 
     result = list(r)
+    assert result == expected
+
+
+def test_multi_multi_rel():
+    keys = ["spam"]
+    rel_data = {
+        "spam": ["eggs", "bacon"]
+    }
+
+    expected = [
+        {
+            "key": "spam",
+            "rel1": "eggs",
+            "rel2": "bacon"
+        }
+    ]
+
+    def f_rel(k):
+        return data_func(rel_data, k)
+
+    r = Reporter()
+    r.set_key(keys, "key")
+    r.add_relation_multi(f_rel, ["rel1", "rel2"])
+
+    result = list(r)
+    print(result)
     assert result == expected
 
 
