@@ -47,5 +47,4 @@ def test_multi_multi_rel():
     r.add_relation_multi(f_rel, ["rel1", "rel2"])
 
     result = list(r)
-    print(result)
     assert result == expected
